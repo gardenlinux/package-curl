@@ -1,0 +1,2 @@
+apt_src curl
+sed -i '/librtmp-dev/d;s/RTMP, //' "$dir/src/debian/control"
