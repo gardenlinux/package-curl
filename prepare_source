@@ -1,9 +1,12 @@
+apt-get install --no-install-recommends -y curl ca-certificates
+
 pkg=curl
 version_orig=8.11.0
 version="$version_orig-1"
-git_src --branch "debian/$version_orig" https://salsa.debian.org/debian/curl,git
+curl -L https://snapshot.debian.org/archive/debian-debug/20241109T204235Z/pool/main/c/curl/curl_8.11.0.orig.tar.gz | gzip -d | tee "$dir/orig.tar" | tar --extract "
+mkdir "$dir/src/debian"
+curl -L https://snapshot.debian.org/archive/debian-debug/20241109T204235Z/pool/main/c/curl/curl_8.11.0-1.debian.tar.xz | xz -d | tee "$dir/debian.tar" | tar --extr"
 apply_patches
-apt_src curl
 
 sed -i '/librtmp-dev/d;s/RTMP, //' "$dir/src/debian/control"
 version_suffix=gl0~bp1443
