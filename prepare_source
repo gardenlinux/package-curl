@@ -1,2 +1,6 @@
-apt_src curl
+pkg=curl
+version_orig=8.11.0
+version="$version_orig-1"
+git clone -b "debian/$version" "https://salsa.debian.org/debian/curl.git" "$dir/src"
 sed -i '/librtmp-dev/d;s/RTMP, //' "$dir/src/debian/control"
+apply_patches
