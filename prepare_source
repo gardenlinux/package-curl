@@ -1,12 +1,6 @@
-apt-get install --no-install-recommends -y curl ca-certificates
-
 pkg=curl
 version_orig=8.11.0
 version="$version_orig-1"
-curl -L https://snapshot.debian.org/archive/debian-debug/20241109T204235Z/pool/main/c/curl/curl_8.11.0.orig.tar.gz | gzip -d | tee "$dir/orig.tar" | tar --extract --strip-components 1 --directory "$dir/src"
-mkdir "$dir/src/debian"
-curl -L https://snapshot.debian.org/archive/debian-debug/20241109T204235Z/pool/main/c/curl/curl_8.11.0-1.debian.tar.xz | xz -d | tee "$dir/debian.tar" | tar --extract --strip-components 1 --directory "$dir/src/debian"
-apply_patches
-
-sed -i '/librtmp-dev/d;s/RTMP, //' "$dir/src/debian/control"
+git_src -b debian/$version https://salsa.debian.org/go-team/packages/golang-golang-x-sys.git
+sed -i "s/dpkg-dev (>= 1.22.5)/dpkg-dev/" "$dir/src/debian/control"
 version_suffix=gl1~bp1443
