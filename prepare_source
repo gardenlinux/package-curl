@@ -15,4 +15,8 @@ sed -i "s/libcurl3t64-gnutls/libcurl3-gnutls/" "$dir/src/debian/control"
 sed -i "s/libcurl3t64-gnutls/libcurl3-gnutls/" "$dir/src/debian/rules"
 sed -i "s/libcurl4t64/libcurl4/" "$dir/src/debian/control"
 sed -i "s/libcurl4t64/libcurl4/" "$dir/src/debian/rules"
+
+mv "$dir/src/debian/libcurl4t64.install" mv "$dir/src/debian/libcurl4.install"
+mv "$dir/src/debian/libcurl4t64.symbols" mv "$dir/src/debian/libcurl4.symbols"
+
 version_suffix=gl2~bp1443
