@@ -1,7 +1,10 @@
 pkg=curl
 version_orig=8.11.1
 version="$version_orig-1"
-git_src -b debian/$version https://salsa.debian.org/debian/curl.git
+git_src -b "debian/$version" "https://salsa.debian.org/debian/curl.git"
+
+#removing rtmp
+sed -i '/librtmp-dev/d;s/RTMP, //' "$dir/src/debian/control"
 
 #only older dpkg-devs are available
 sed -i "s/dpkg-dev (>= 1.22.5)/dpkg-dev/" "$dir/src/debian/control"
@@ -9,5 +12,7 @@ sed -i "s/dpkg-dev (>= 1.22.5)/dpkg-dev/" "$dir/src/debian/control"
 #no t64 support yet
 sed -i '/Provides: ${t64:Provides}/d' "$dir/src/debian/control"
 sed -i "s/libcurl3t64-gnutls/libcurl3-gnutls/" "$dir/src/debian/control"
+sed -i "s/libcurl3t64-gnutls/libcurl3-gnutls/" "$dir/src/debian/rules"
 sed -i "s/libcurl4t64/libcurl4/" "$dir/src/debian/control"
+sed -i "s/libcurl4t64/libcurl4/" "$dir/src/debian/rules"
 version_suffix=gl2~bp1443
