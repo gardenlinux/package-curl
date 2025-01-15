@@ -5,3 +5,4 @@ git_src -b "debian/$version" "https://salsa.debian.org/debian/curl.git"
 
 #removing rtmp
 sed -i '/librtmp-dev/d;s/RTMP, //' "$dir/src/debian/control"
+version_suffix=gl0
