@@ -18,5 +18,13 @@ sed -i "s/libcurl4t64/libcurl4/" "$dir/src/debian/rules"
 
 mv "$dir/src/debian/libcurl4t64.install" "$dir/src/debian/libcurl4.install"
 mv "$dir/src/debian/libcurl4t64.symbols" "$dir/src/debian/libcurl4.symbols"
+sed -i "s/libcurl4t64/libcurl4/" "$dir/src/debian/libcurl4.symbols"
 
-version_suffix=gl2~bp1443
+mv "$dir/src/debian/libcurl3t64-gnutls.install" "$dir/src/debian/libcurl3-gnutls.install"
+mv "$dir/src/debian/libcurl3t64-gnutls.symbols" "$dir/src/debian/libcurl3-gnutls.symbols"
+mv "$dir/src/debian/libcurl3t64-gnutls.links" "$dir/src/debian/libcurl3-gnutls.links"
+mv "$dir/src/debian/libcurl3t64-gnutls.lintian-overrides" "$dir/src/debian/libcurl3-gnutls.lintian-overrides"
+sed -i "s/libcurl3t64-gnutls/libcurl3-gnutls/" "$dir/src/debian/libcurl3-gnutls.lintian-overrides"
+sed -i "s/libcurl3t64-gnutls/libcurl3-gnutls/" "$dir/src/debian/libcurl3-gnutls.symbols"
+
+version_suffix=gl3~bp1443
