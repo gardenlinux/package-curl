@@ -1,0 +1,14 @@
+diff --color -Naur a/debian/rules b/debian/rules
+--- a/debian/rules	2025-02-17 11:59:14
++++ b/debian/rules	2025-02-17 12:01:19
+@@ -55,8 +55,8 @@
+ 	autoreconf -fi && \
+ 	cp ../../ltmain.sh . && \
+ 	dh_auto_configure ${CONFIGURE_ARGS} --with-openssl \
+-		--with-openssl-quic \
+-		--with-nghttp3
++		--without-ngtcp2 \
++		--without-nghttp3
+ endif
+ ifeq ($(filter pkg.curl.no-gnutls,$(DEB_BUILD_PROFILES)),)
+ 	mkdir -p debian/build-gnutls

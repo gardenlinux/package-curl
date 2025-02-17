@@ -27,4 +27,6 @@ mv "$dir/src/debian/libcurl3t64-gnutls.lintian-overrides" "$dir/src/debian/libcu
 sed -i "s/libcurl3t64-gnutls/libcurl3-gnutls/" "$dir/src/debian/libcurl3-gnutls.lintian-overrides"
 sed -i "s/libcurl3t64-gnutls/libcurl3-gnutls/" "$dir/src/debian/libcurl3-gnutls.symbols"
 
+apply_patches debian_fixes
+
 version_suffix=gl0~bp1443
