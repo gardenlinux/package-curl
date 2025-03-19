@@ -8,3 +8,4 @@ jobs:
     uses: gardenlinux/package-build/.github/workflows/build.yml@main
     with:
       release: ${{ github.ref == 'refs/heads/main' }}
+      build_dep: gardenlinux/bp-package-gnutls28 3.8.9-2gl0+bp1592
