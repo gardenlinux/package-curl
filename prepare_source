@@ -1,6 +1,7 @@
-pkg=curl
-version="8.18.0-1"
+version_orig="8.18.0-2"
+version="$version_orig"
 version_suffix=gl0+bp1877
+
 git_src -b "debian/$version" "https://salsa.debian.org/debian/curl.git"
 
 #removing rtmp
