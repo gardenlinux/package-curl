@@ -10,5 +10,4 @@ jobs:
       release: ${{ github.ref == 'refs/heads/main' }}
       build_dep: |
         gardenlinux/bp-package-nghttp3 1.11.0-1gl0+bp1877
-        gardenlinux/bp-package-ngtcp2 1.16.0-1gl0~bp1877
-
+        gardenlinux/bp-package-ngtcp2 1.16.0-1gl0+bp1877
