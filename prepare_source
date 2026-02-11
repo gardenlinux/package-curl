@@ -1,11 +1,10 @@
 pkg=curl
-version_orig=8.14.1
+version_orig=8.18.0
 version="$version_orig-2"
+version_suffix=gl1+bp1592
+
 git_src -b "debian/$version" "https://salsa.debian.org/debian/curl.git"
 
-#removing rtmp
-sed -i '/librtmp-dev/d;s/RTMP, //' "$dir/src/debian/control"
-
-version_suffix=gl0~bp1592
-
+# We are changing control and rules files invalidating available symbols
 apply_patches debian_fixes
+rm ${dir}/src/debian/libcurl*.symbols

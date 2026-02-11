@@ -1,0 +1,118 @@
+--- a/debian/control	2026-02-14 13:04:23.597392084 +0100
++++ b/debian/control	2026-02-14 13:06:49.022887428 +0100
+@@ -16,13 +16,7 @@ Build-Depends: debhelper-compat (= 13),
+                libidn2-dev,
+                libkrb5-dev,
+                libldap2-dev <!pkg.curl.noldap>,
+-               libnghttp2-dev,
+-               libnghttp3-dev (>= 1.11.0~),
+-               libngtcp2-crypto-gnutls-dev (>= 1.16.0~),
+-               libngtcp2-crypto-ossl-dev (>= 1.16.0~),
+-               libngtcp2-dev (>= 1.16.0~),
+                libpsl-dev,
+-               librtmp-dev,
+                libssh2-1-dev,
+                libssl-dev,
+                libtool,
+@@ -51,7 +45,7 @@ Multi-Arch: foreign
+ Description: command line tool for transferring data with URL syntax
+  curl is a command line tool for transferring data with URL syntax, supporting
+  DICT, FILE, FTP, FTPS, GOPHER, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, POP3,
+- POP3S, RTMP, RTSP, SCP, SFTP, SMTP, SMTPS, TELNET and TFTP.
++ POP3S, RTSP, SCP, SFTP, SMTP, SMTPS, TELNET and TFTP.
+  .
+  curl supports SSL certificates, HTTP POST, HTTP PUT, FTP uploading, HTTP form
+  based upload, proxies, cookies, user+password authentication (Basic, Digest,
+@@ -64,9 +58,7 @@ X-Time64-Compat: libcurl4
+ Breaks: libcurl4 (<< ${source:Version}),
+ Architecture: any
+ Section: libs
+-Depends: libnghttp3-9 (>= 1.11.0~),
+-         libngtcp2-16 (>= 1.16.0~),
+-         ${misc:Depends},
++Depends: ${misc:Depends},
+          ${shlibs:Depends},
+ Recommends: ca-certificates,
+ Pre-Depends: ${misc:Pre-Depends},
+@@ -77,7 +69,7 @@ Multi-Arch: same
+ Description: easy-to-use client-side URL transfer library (OpenSSL flavour)
+  libcurl is an easy-to-use client-side URL transfer library, supporting DICT,
+  FILE, FTP, FTPS, GOPHER, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, POP3, POP3S,
+- RTMP, RTSP, SCP, SFTP, SMTP, SMTPS, TELNET and TFTP.
++ RTSP, SCP, SFTP, SMTP, SMTPS, TELNET and TFTP.
+  .
+  libcurl supports SSL certificates, HTTP POST, HTTP PUT, FTP uploading, HTTP
+  form based upload, proxies, cookies, user+password authentication (Basic,
+@@ -97,9 +89,7 @@ Replaces: libcurl3-gnutls,
+ Breaks: libcurl3-gnutls (<< ${source:Version}),
+ Architecture: any
+ Section: libs
+-Depends: libnghttp3-9 (>= 1.11.0~),
+-         libngtcp2-16 (>= 1.16.0~),
+-         ${misc:Depends},
++Depends: ${misc:Depends},
+          ${shlibs:Depends},
+ Recommends: ca-certificates,
+ Pre-Depends: ${misc:Pre-Depends},
+@@ -107,7 +97,7 @@ Multi-Arch: same
+ Description: easy-to-use client-side URL transfer library (GnuTLS flavour)
+  libcurl is an easy-to-use client-side URL transfer library, supporting DICT,
+  FILE, FTP, FTPS, GOPHER, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, POP3, POP3S,
+- RTMP, RTSP, SCP, SFTP, SMTP, SMTPS, TELNET and TFTP.
++ RTSP, SCP, SFTP, SMTP, SMTPS, TELNET and TFTP.
+  .
+  libcurl supports SSL certificates, HTTP POST, HTTP PUT, FTP uploading, HTTP
+  form based upload, proxies, cookies, user+password authentication (Basic,
+@@ -135,12 +125,7 @@ Depends: libbrotli-dev,
+          libidn2-dev,
+          libkrb5-dev,
+          libldap-dev,
+-         libnghttp2-dev,
+-         libnghttp3-dev (>= 1.11.0~),
+-         libngtcp2-crypto-ossl-dev (>= 1.16.0~),
+-         libngtcp2-dev (>= 1.16.0~),
+          libpsl-dev,
+-         librtmp-dev,
+          libssh2-1-dev,
+          libssl-dev,
+          libzstd-dev,
+@@ -154,7 +139,7 @@ Multi-Arch: same
+ Description: development files and documentation for libcurl (OpenSSL flavour)
+  libcurl is an easy-to-use client-side URL transfer library, supporting DICT,
+  FILE, FTP, FTPS, GOPHER, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, POP3, POP3S,
+- RTMP, RTSP, SCP, SFTP, SMTP, SMTPS, TELNET and TFTP.
++ RTSP, SCP, SFTP, SMTP, SMTPS, TELNET and TFTP.
+  .
+  libcurl supports SSL certificates, HTTP POST, HTTP PUT, FTP uploading, HTTP
+  form based upload, proxies, cookies, user+password authentication (Basic,
+@@ -184,12 +169,7 @@ Depends: libbrotli-dev,
+          libidn2-dev,
+          libkrb5-dev,
+          libldap-dev,
+-         libnghttp2-dev,
+-         libnghttp3-dev (>= 1.11.0~),
+-         libngtcp2-crypto-gnutls-dev (>= 1.16.0~),
+-         libngtcp2-dev (>= 1.16.0~),
+          libpsl-dev,
+-         librtmp-dev,
+          libssh2-1-dev,
+          libzstd-dev,
+          zlib1g-dev,
+@@ -202,7 +182,7 @@ Multi-Arch: same
+ Description: development files and documentation for libcurl (GnuTLS flavour)
+  libcurl is an easy-to-use client-side URL transfer library, supporting DICT,
+  FILE, FTP, FTPS, GOPHER, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, POP3, POP3S,
+- RTMP, RTSP, SCP, SFTP, SMTP, SMTPS, TELNET and TFTP.
++ RTSP, SCP, SFTP, SMTP, SMTPS, TELNET and TFTP.
+  .
+  libcurl supports SSL certificates, HTTP POST, HTTP PUT, FTP uploading, HTTP
+  form based upload, proxies, cookies, user+password authentication (Basic,
+@@ -226,7 +206,7 @@ Depends: ${misc:Depends},
+ Description: documentation for libcurl
+  libcurl is an easy-to-use client-side URL transfer library, supporting DICT,
+  FILE, FTP, FTPS, GOPHER, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, POP3, POP3S,
+- RTMP, RTSP, SCP, SFTP, SMTP, SMTPS, TELNET and TFTP.
++ RTSP, SCP, SFTP, SMTP, SMTPS, TELNET and TFTP.
+  .
+  libcurl supports SSL certificates, HTTP POST, HTTP PUT, FTP uploading, HTTP
+  form based upload, proxies, cookies, user+password authentication (Basic,
