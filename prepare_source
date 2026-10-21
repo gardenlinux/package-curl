@@ -1,5 +1,5 @@
 pkg=curl
-version_orig=8.22.0
+version_orig=8.23.0
 version="$version_orig-1"
 git_src -b "debian/$version" "https://salsa.debian.org/debian/curl.git"
 
