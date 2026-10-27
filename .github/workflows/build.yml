@@ -13,3 +13,4 @@ jobs:
         gardenlinux/bp-package-ngtcp2 1.24.0-1gl0+bp1877
         gardenlinux/package-openssl 3.5.5-1gl58+bp1877
         gardenlinux/bp-package-glibc 2.41-12+deb13u4gl0+bp1877
+        gardenlinux/bp-package-dpkg 1.22.22gl0+bp1877
